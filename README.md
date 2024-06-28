@@ -33,6 +33,8 @@ The contract includes capabilities for minting new tokens, burning existing toke
 2. **Install Dependencies**:
    No frontend dependencies required.
 
+# Create and Mint Token
+
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
