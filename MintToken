@@ -1,3 +1,12 @@
+# Token Smart Contract Walk-through
+
+## Overview
+
+The `Token` contract is an ERC20 token implementation with additional functionalities for minting, burning, ownership management, and secure token transfers.
+
+## Code Explanation
+
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -6,29 +15,34 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.2/contr
 
 contract Token is ERC20, Ownable {
     constructor() ERC20("MyToken", "MTK") {
-        _mint(msg.sender, 1000000 * 10 ** decimals());
-        transferOwnership(msg.sender);
+        _mint(msg.sender, 1000000 * 10 ** decimals());  // Mint 1,000,000 tokens to the contract deployer
+        transferOwnership(msg.sender);  // Transfer ownership to the deployer
     }
 
+    /// @dev Mint new tokens and allocate them to the specified address
     function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
     }
 
+    /// @dev Burn tokens from a specified account
     function burn(address account, uint256 amount) public {
         _burn(account, amount);
     }
 
+    /// @dev Transfer ownership of the contract to a new address
     function transferOwnership(address newOwner) public override onlyOwner {
         require(newOwner != address(0), "Ownable: new owner is the zero address");
         emit OwnershipTransferred(owner(), newOwner);
         _transferOwnership(newOwner);
     }
 
+    /// @dev Approve a spender to transfer tokens on behalf of the owner
     function approveTransfer(address spender, uint256 amount) public returns (bool) {
         _approve(msg.sender, spender, amount);
         return true;
     }
 
+    /// @dev Transfer tokens from one address to another
     function transferFrom(address from, address to, uint256 amount) public override returns (bool) {
         require(_msgSender() == owner() || allowance(from, _msgSender()) >= amount, "ERC20: transfer amount exceeds allowance");
         _transfer(from, to, amount);
@@ -38,3 +52,40 @@ contract Token is ERC20, Ownable {
         return true;
     }
 }
+```
+# Key Features
+
+## Constructor
+
+The constructor initializes the token with the name "MyToken" and symbol "MTK". It mints 1,000,000 tokens to the deployer's address and transfers ownership to the deployer.
+
+## Minting
+
+The `mint` function allows the contract owner to mint new tokens and allocate them to a specified address.
+
+## Burning
+
+The `burn` function allows any account to burn their tokens, reducing the total supply.
+
+## Ownership Management
+
+The contract implements Ownable from OpenZeppelin, enabling secure transfer of ownership. Only the contract owner can execute certain functions such as minting, burning, and transferring ownership.
+
+## Token Transfers
+
+Implements ERC20 standard functions:
+- `transfer`: Transfer tokens from one address to another.
+- `transferFrom`: Transfer tokens on behalf of another address, subject to approval.
+- `approve`: Approve a spender to transfer tokens on behalf of the owner.
+
+## Deployment and Interaction
+
+- **Deployment**: Deploy this contract using tools like Remix or Hardhat.
+- **Interaction**: After deployment, interact with the contract:
+  - Mint tokens using the `mint` function.
+  - Burn tokens using the `burn` function.
+  - Transfer ownership using the `transferOwnership` function.
+  - Approve token transfers using the `approveTransfer` function.
+  - Transfer tokens between addresses using `transfer` and `transferFrom`.
+
+Use tools and frameworks compatible with Solidity development to deploy and interact with this contract.
