@@ -1,13 +1,13 @@
-# Token Smart Contract Project
+# create and Mint Token Project
 
 ## Overview
 
-This repository contains a Solidity smart contract for creating an ERC20 token named "MyToken" (symbol: "MTK"). 
+This repository contains a Solidity smart contract for creating an ERC20 token named "Token" (symbol: "MTK"). 
 The contract includes capabilities for minting new tokens, burning existing tokens, managing ownership, and facilitating token transfers according to the ERC20 standard.
 
 ## Features
 
-- **Token Contract**: Implements ERC20 functionality with name "MyToken" and symbol "MTK".
+- **Token Contract**: Implements ERC20 functionality with name "Token" and symbol "MTK".
 - **Minting**: Contract owner can mint new tokens and allocate them to specified addresses.
 - **Burning**: Allows any token holder to burn their tokens, reducing the total supply.
 - **Ownership Management**: Utilizes OpenZeppelin's Ownable contract for secure ownership transfer and access control.
