@@ -1,4 +1,4 @@
-# create and Mint Token Project
+# Mint Token Project
 
 ## Overview
 
