@@ -50,6 +50,7 @@ contract Token is ERC20, Ownable {
     }
 }
 
+/*
 Key Features
 1. Constructor
 The constructor initializes the token with the name "MyToken" and symbol "MTK". It mints 1,000,000 tokens to the deployer's address and transfers ownership to the deployer.
@@ -66,18 +67,17 @@ The contract implements Ownable from OpenZeppelin, enabling secure transfer of o
 5. Token Transfers
 
 Implements ERC20 standard functions:
-- `transfer`: Transfer tokens from one address to another.
-- `transferFrom`: Transfer tokens on behalf of another address, subject to approval.
-- `approve`: Approve a spender to transfer tokens on behalf of the owner.
+1. `transfer`: Transfer tokens from one address to another.
+2. `transferFrom`: Transfer tokens on behalf of another address, subject to approval.
+3. `approve`: Approve a spender to transfer tokens on behalf of the owner.
 
-## Deployment and Interaction
+Deployment and Interaction
+1. Deployment: Deploy this contract using tools like Remix or Hardhat.
+2. Interaction: After deployment, interact with the contract:
+  a) Mint tokens using the `mint` function.
+  b) Burn tokens using the `burn` function.
+  c) Transfer ownership using the `transferOwnership` function.
+  d) Approve token transfers using the `approveTransfer` function.
+  e) Transfer tokens between addresses using `transfer` and `transferFrom`.
 
-- **Deployment**: Deploy this contract using tools like Remix or Hardhat.
-- **Interaction**: After deployment, interact with the contract:
-  - Mint tokens using the `mint` function.
-  - Burn tokens using the `burn` function.
-  - Transfer ownership using the `transferOwnership` function.
-  - Approve token transfers using the `approveTransfer` function.
-  - Transfer tokens between addresses using `transfer` and `transferFrom`.
-
-Use tools and frameworks compatible with Solidity development to deploy and interact with this contract.
+Use tools and frameworks compatible with Solidity development to deploy and interact with this contract. */
