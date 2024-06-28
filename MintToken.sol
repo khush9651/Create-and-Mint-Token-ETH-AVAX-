@@ -53,17 +53,15 @@ contract Token is ERC20, Ownable {
 /*
 Key Features
 1. Constructor
-The constructor initializes the token with the name "MyToken" and symbol "MTK". It mints 1,000,000 tokens to the deployer's address and transfers ownership to the deployer.
-
+The constructor initializes the token with the name "MyToken" and symbol "MTK". 
+It mints 1,000,000 tokens to the deployer's address and transfers ownership to the deployer.
 2. Minting
 The `mint` function allows the contract owner to mint new tokens and allocate them to a specified address.
-
 3. Burning
 The `burn` function allows any account to burn their tokens, reducing the total supply.
-
 4. Ownership Management
-The contract implements Ownable from OpenZeppelin, enabling secure transfer of ownership. Only the contract owner can execute certain functions such as minting, burning, and transferring ownership.
-
+The contract implements Ownable from OpenZeppelin, enabling secure transfer of ownership. Only the contract owner can 
+execute certain functions such as minting, burning, and transferring ownership.
 5. Token Transfers
 
 Implements ERC20 standard functions:
