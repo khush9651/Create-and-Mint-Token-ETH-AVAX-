@@ -1,12 +1,8 @@
-# Token Smart Contract Walk-through
+Token Smart Contract Walk-through
 
-## Overview
-
+Overview
 The `Token` contract is an ERC20 token implementation with additional functionalities for minting, burning, ownership management, and secure token transfers.
 
-## Code Explanation
-
-```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -52,26 +48,21 @@ contract Token is ERC20, Ownable {
         return true;
     }
 }
-```
-# Key Features
 
-## Constructor
-
+Key Features
+1. Constructor
 The constructor initializes the token with the name "MyToken" and symbol "MTK". It mints 1,000,000 tokens to the deployer's address and transfers ownership to the deployer.
 
-## Minting
-
+2. Minting
 The `mint` function allows the contract owner to mint new tokens and allocate them to a specified address.
 
-## Burning
-
+3. Burning
 The `burn` function allows any account to burn their tokens, reducing the total supply.
 
-## Ownership Management
-
+4. Ownership Management
 The contract implements Ownable from OpenZeppelin, enabling secure transfer of ownership. Only the contract owner can execute certain functions such as minting, burning, and transferring ownership.
 
-## Token Transfers
+5. Token Transfers
 
 Implements ERC20 standard functions:
 - `transfer`: Transfer tokens from one address to another.
