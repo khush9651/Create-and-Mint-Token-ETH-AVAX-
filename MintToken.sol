@@ -1,7 +1,8 @@
-Token Smart Contract Walk-through
+/* Token Smart Contract Walk-through
 
 Overview
-The `Token` contract is an ERC20 token implementation with additional functionalities for minting, burning, ownership management, and secure token transfers.
+The `Token` contract is an ERC20 token implementation with additional functionalities for minting, burning, ownership management,
+and secure token transfers.*/
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
